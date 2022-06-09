@@ -1,0 +1,29 @@
+body {
+    margin: 10%;
+    background: linear-gradient(to right, #FF5D5D, #FFE3A9);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.calcc {
+    padding: 20px 12px;
+}
+.container{
+    margin-bottom: 20px;
+}
+
+.gap-p {
+    padding: 0 10px;
+    background-color: white;
+}
+
+button {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: grey;
+}

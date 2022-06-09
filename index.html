@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Margin calc</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="aa">Wallet (ut): </h3>
+                <input type="text" class="aa wallet">
+            </div>
+            <div class="col">
+                <h3 class="aa">Margin (%): </h3>
+                <input type="text" class="aa margin">
+            </div>
+            <div class="col">
+                <h3 class="aa">Acceptable Loss (%): </h3>
+                <input type="text" class="aa acceptable-loss">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3 class="aa">Entry Price: </h3>
+                <input type="text" class="aa entry">
+            </div>
+            <div class="col">
+                <h3 class="aa">Take Profit: </h3>
+                <input type="text" class="aa take-profit">
+            </div>
+            <div class="col">
+                <h3 class="aa">Stop Loss: </h3>
+                <input type="text" class="aa stop-loss">
+            </div>
+        </div>
+    </div>
+
+    <div class="calcc">
+        <button type="button" name="button" onclick="calculate()">Calculate</button>
+
+        <h3 class="ratio">R/R ratio: --</h3>
+        <h3 class="ppwallet">% of wallet: --</h3>
+    </div>
+
+
+
+
+    <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>

@@ -12,28 +12,53 @@ function calculate() {
         var ratio1 = (entry - stopLoss);
         var ratio2 = (takeProfit - entry);
         for (let i = 1; i <= ratio1 && i <= ratio2; i++) {
-            if (ratio1 % i == 0 && ratio2 % i == 0) {
+            if (ratio1 % i >= 0 && ratio2 % i >= 0) {
                 gdc = i;
             }
         }
-        ratio1 = (ratio1/gdc).toFixed(2);
-        ratio2 = (ratio2/gdc).toFixed(2);
 
+        ratio1 = ratio1/gdc;
+        ratio2 = ratio2/gdc;
 
-        document.querySelector(".ratio").innerHTML = "R/R ratio : " + ratio1 + " : " + ratio2 ;
+        console.log(gdc);
+
+        console.log(ratio1);
+        console.log(ratio2);
+
+        if (ratio1 > ratio2){
+            ratio1 = (ratio1/ratio2).toFixed(2);
+            document.querySelector(".ratio").innerHTML = "R/R ratio : " + ratio1 + " : 1"  ;
+
+        }
+        else {
+            ratio2 = (ratio2/ratio1).toFixed(2);
+            document.querySelector(".ratio").innerHTML = "R/R ratio : 1 : " + ratio2 ;
+        }
     }
     else if (stopLoss > takeProfit) {
         var ratio1 = (stopLoss - entry);
         var ratio2 = (entry - takeProfit);
         for (let i = 1; i <= ratio1 && i <= ratio2; i++) {
-            if (ratio1 % i == 0 && ratio2 % i == 0) {
+            if (ratio1 % i >= 0 && ratio2 % i >= 0) {
                 gdc = i;
             }
         }
         ratio1 = (ratio1/gdc);
         ratio2 = (ratio2/gdc);
 
-        document.querySelector(".ratio").innerHTML = "R/R ratio : " + ratio1 + " : " + ratio2 ;
+        console.log(gdc);
+        console.log(ratio1);
+        console.log(ratio2);
+
+        if (ratio1 > ratio2){
+            ratio1 = (ratio1/ratio2).toFixed(2);
+            document.querySelector(".ratio").innerHTML = "R/R ratio : " + ratio1 + " : 1"  ;
+
+        }
+        else {
+            ratio2 = (ratio2/ratio1).toFixed(2);
+            document.querySelector(".ratio").innerHTML = "R/R ratio : 1 : " + ratio2 ;
+        }
     }
 
     var gap = (((stopLoss - entry)/entry)*100);
@@ -41,7 +66,7 @@ function calculate() {
     var pwallet = (acceptableLoss / marginGap).toFixed(2);
     var walletSize = (wallet*(pwallet/100)).toFixed(2);
 
-        if (pwallet && walletSize < 0) {
+    if (pwallet && walletSize < 0) {
         pwallet = -(pwallet);
         walletSize = -(walletSize);
 
@@ -51,10 +76,9 @@ function calculate() {
 
         document.querySelector(".ppwallet").innerHTML = "% of wallet: " + pwallet + "% (" + walletSize + " u)" ;
     }
-    else {
+
     document.querySelector(".ppwallet").innerHTML = "% of wallet: " + pwallet + "% (" + walletSize + " u)" ;
 
-    }
 }
 
 

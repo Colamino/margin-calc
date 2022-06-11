@@ -41,10 +41,22 @@ function calculate() {
     var pwallet = (acceptableLoss / marginGap).toFixed(2);
     var walletSize = (wallet*(pwallet/100)).toFixed(2);
 
-    document.querySelector(".ppwallet").innerHTML = pwallet + "% (" + walletSize + " u)" ;
+        if (pwallet && walletSize < 0) {
+        pwallet = -(pwallet);
+        walletSize = -(walletSize);
 
+        pwallet = pwallet.toFixed(2);
+        walletSize = walletSize.toFixed(2);
+
+
+        document.querySelector(".ppwallet").innerHTML = "% of wallet: " + pwallet + "% (" + walletSize + " u)" ;
+    }
+    else {
+    document.querySelector(".ppwallet").innerHTML = "% of wallet: " + pwallet + "% (" + walletSize + " u)" ;
+
+    }
 }
 
 
 
-//var gap = (stoploss - entry/entry)*100
+

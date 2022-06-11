@@ -30,8 +30,8 @@ function calculate() {
                 gdc = i;
             }
         }
-        ratio1 = (ratio1/gdc).toFixed(2);
-        ratio2 = (ratio2/gdc).toFixed(2);
+        ratio1 = (ratio1/gdc);
+        ratio2 = (ratio2/gdc);
 
         document.querySelector(".ratio").innerHTML = "R/R ratio : " + ratio1 + " : " + ratio2 ;
     }
